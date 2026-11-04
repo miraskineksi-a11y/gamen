@@ -50,6 +50,9 @@ namespace Caribbean
                 Islands.Add(isl);
                 if (def.isPort) PortIsland = isl;
                 if (def.isSkull) SkullIsland = isl;
+                // острова неподвижны: объединяем их меши (меньше вызовов отрисовки)
+                try { StaticBatchingUtility.Combine(isl.gameObject); }
+                catch (System.Exception e) { Debug.LogWarning("Static batching: " + e.Message); }
             }
             Physics.SyncTransforms();
         }
