@@ -141,3 +141,6 @@ crashlytics-build.properties
 *.blend2
 __pycache__/
 *.pyc
+
+# превью отдельных моделей (build_models.py --render) — генерируются заново
+Blender/renders/*.png
